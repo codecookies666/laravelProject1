@@ -12,12 +12,9 @@ trim_trailing_whitespace = true
 trim_trailing_whitespace = false
 
 [*.yml]
-<<<<<<< HEAD
 indent_size = 2
 
 [*.{js,html,blade.php,css,scss}]
 indent_style = space
 indent_size = 2
-=======
-indent_size = 2
->>>>>>> d05190eb70182051d1392bed8f2db28b64dfd275
+
