@@ -10,7 +10,7 @@
             <div class="card-body">
 
                 <form method="POST" action="{{ route('users.store') }}">
-                    {{ csrf_field() }}
+                    {{  csrf_field()  }}
 
                     <div class="form-group">
                         <label for="name">名称：</label>
