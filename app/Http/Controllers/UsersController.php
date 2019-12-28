@@ -107,7 +107,7 @@ class UsersController extends Controller
         $subject = '感谢注册 Weibo 应用！请确认您的邮箱。';
 
         Mail::send($view, $data, function($message) use ($from, $name, $to, $subject){
-            $message->from($from, $name)->to($to)->subject($subject);
+            $message->to($to)->subject($subject);
         });
     }
     //邮箱激活操作
