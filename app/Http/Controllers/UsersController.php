@@ -33,10 +33,13 @@ class UsersController extends Controller
     {
         return view('users.create');
     }
-
+    //用户首页
     public function show(User $user)
     {
-        return view('users.show' , compact('user'));
+        $statuses = $user->statuses()
+                    ->orderBy('id','desc')
+                    ->paginate(10);
+        return view('users.show' , compact('user','statuses'));
     }
 
     public function store(Request $request)
