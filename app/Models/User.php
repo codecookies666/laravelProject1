@@ -66,7 +66,7 @@ class User extends Authenticatable
 
         return Status::whereIn('user_id', $user_ids)
                                 ->with('user')
-                                ->orederBy('created_at', 'desc');
+                                ->orderBy('created_at', 'desc');
     }
 
     //获取关注的人和粉丝列表
