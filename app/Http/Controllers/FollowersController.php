@@ -21,15 +21,19 @@ class FollowersController extends Controller
             Auth::user()->follow($user->id);
         }
 
+        session()->flash('success', '关注成功，去看看吧！');
+
         return redirect()->route('users.show', $user->id);
     }
 
     public function destroy(User $user)
     {
         $this->authorize('follow', $user);
-        if (! Auth::user()->isFollowing($user->id)){
+        if (Auth::user()->isFollowing($user->id)){
             Auth::user()->unfollow($user->id);
         }
+
+        session()->flash('success', '取消关注成功！');
 
         return redirect()->route('users.show', $user->id);
     }
